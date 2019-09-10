@@ -8,3 +8,9 @@
    sudo apt-get update 
    sudo apt-get install libpcre3 libpcre3-dev 
    ```
+   
+   - 内存溢出，尝试修改下面的代码
+      - vendor\swoft\task\src\Crontab\TableCrontab.php
+   ```
+      const TABLE_SIZE = 1024;
+   ```
