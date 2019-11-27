@@ -43,7 +43,7 @@
     }
    ```
    
-      - 查看相关数据
+      * 查看相关数据
    ```php
    /* @var \Swoft\Task\Crontab\Crontab $cron*/
    $cron = App::getBean('crontab');
