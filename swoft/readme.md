@@ -42,3 +42,14 @@
         return $value;
     }
    ```
+   
+   ```php
+   /* @var \Swoft\Task\Crontab\Crontab $cron*/
+   $cron = App::getBean('crontab');
+
+   $arr = $cron->getRunTimeTableData();
+   ConsoleUtil::log("-------------------------------------------",[$arr]);
+
+   $arr = $cron->getTasks();
+   ConsoleUtil::log("-------------------------------------------",[$arr]);
+   ```
