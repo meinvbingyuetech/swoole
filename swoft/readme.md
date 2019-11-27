@@ -14,3 +14,31 @@
    ```
       const TABLE_SIZE = 1024;
    ```
+
+   - 清理任务
+      - vendor\swoft\task\src\Crontab\Crontab.php
+   ```php
+   /**
+     * 清理执行任务表
+     */
+    private function cleanRunTimeTable()
+    {
+        foreach ($this->getRunTimeTable()->table as $key => $value) {
+            if ($value['runStatus'] === self::FINISH || $value['sec'] < time()) {
+                $this->getRunTimeTable()->del($key);
+            }
+        }
+    }
+
+    /**
+     * 获取执行任务表数据
+     */
+    public function getRunTimeTableData()
+    {
+        $arr = [];
+        foreach ($this->getRunTimeTable()->table as $key => $value) {
+            $arr[] = $value;
+        }
+        return $value;
+    }
+   ```
